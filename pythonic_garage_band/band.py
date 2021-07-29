@@ -7,18 +7,12 @@ class Musician(ABC):
 
 
 class Band(Musician):
+    instances = []
+
     def __init__(self,name,members=[]):
         self.name = name
         self.members=members
-        self.__class__.counter()
-
-    instances = []
-
-    @classmethod
-    def counter(cls):
-        cls.instances.append('1')
-        print(cls.instances)
-        return cls.instances
+        self.__class__.instances.append(self.name)
 
 
     @classmethod
@@ -83,9 +77,10 @@ class Bassist(Band):
     def play_solo(self):
         return("bom bom buh bom")
 
-        
 
-    
-# if __name__ == "__main__" :
-#     hello = Band("The Nobodies", [])
-#     hey = Band("The Nobodies", [])
+
+
+if __name__ == "__main__" :
+    hello = Band("Hellos", [])
+    hey = Band("Heys", [])
+    print(Band.instances)
