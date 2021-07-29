@@ -35,7 +35,6 @@ class Band(Musician):
 
     @classmethod
     def to_list(cls):
-        print('yes')
         return cls.instances
 
     def play_solos(self):
@@ -87,6 +86,6 @@ class Bassist(Band):
         
 
     
-if __name__ == "__main__" :
-    hello = Band("The Nobodies", [])
-    hey = Band("The Nobodies", [])
+# if __name__ == "__main__" :
+#     hello = Band("The Nobodies", [])
+#     hey = Band("The Nobodies", [])
